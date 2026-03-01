@@ -1,0 +1,229 @@
+{
+  "projectType": "api-service",
+  "projectName": "CREDEBL",
+  "projectDescription": "Open source platform for decentralized identity and verifiable credentials with enterprise-grade features",
+  "theme": "aspen",
+  "primaryColor": "#1E40AF",
+  "lightColor": "#3B82F6",
+  "darkColor": "#1E3A8A",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "architecture",
+              "installation"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "concepts/organizations",
+              "concepts/agents",
+              "concepts/dids",
+              "concepts/credentials",
+              "concepts/connections",
+              "concepts/ecosystems"
+            ]
+          },
+          {
+            "group": "Authentication",
+            "pages": [
+              "auth/overview",
+              "auth/jwt-authentication",
+              "auth/oauth2-flow",
+              "auth/roles-permissions"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/creating-organization",
+              "guides/provisioning-agent",
+              "guides/issuing-credentials",
+              "guides/verifying-credentials",
+              "guides/managing-connections",
+              "guides/bulk-operations",
+              "guides/ecosystems"
+            ]
+          },
+          {
+            "group": "Advanced Features",
+            "pages": [
+              "advanced/oid4vc",
+              "advanced/multi-tenancy",
+              "advanced/webhooks",
+              "advanced/x509-certificates",
+              "advanced/cloud-wallet"
+            ]
+          },
+          {
+            "group": "Operations",
+            "pages": [
+              "operations/deployment",
+              "operations/monitoring",
+              "operations/troubleshooting"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "API Overview",
+            "pages": [
+              "api/overview",
+              "api/authentication",
+              "api/rate-limits",
+              "api/errors"
+            ]
+          },
+          {
+            "group": "Organization APIs",
+            "pages": [
+              "api/organizations/create-organization",
+              "api/organizations/get-organization",
+              "api/organizations/update-organization",
+              "api/organizations/manage-users",
+              "api/organizations/invitations"
+            ]
+          },
+          {
+            "group": "Credential Issuance APIs",
+            "pages": [
+              "api/credentials/issue-credential",
+              "api/credentials/oob-credential",
+              "api/credentials/bulk-issuance",
+              "api/credentials/get-credentials"
+            ]
+          },
+          {
+            "group": "Verification APIs",
+            "pages": [
+              "api/verification/create-proof-request",
+              "api/verification/verify-presentation",
+              "api/verification/oob-proof-request",
+              "api/verification/get-proofs"
+            ]
+          },
+          {
+            "group": "Connection APIs",
+            "pages": [
+              "api/connections/create-invitation",
+              "api/connections/receive-invitation",
+              "api/connections/get-connections",
+              "api/connections/basic-message"
+            ]
+          },
+          {
+            "group": "Schema & Credential Definition APIs",
+            "pages": [
+              "api/schemas/create-schema",
+              "api/schemas/get-schemas",
+              "api/schemas/create-credential-definition",
+              "api/schemas/get-credential-definitions"
+            ]
+          },
+          {
+            "group": "Agent APIs",
+            "pages": [
+              "api/agents/provision-agent",
+              "api/agents/create-did",
+              "api/agents/get-dids",
+              "api/agents/register-did"
+            ]
+          },
+          {
+            "group": "Ecosystem APIs",
+            "pages": [
+              "api/ecosystems/create-ecosystem",
+              "api/ecosystems/get-ecosystems",
+              "api/ecosystems/invite-member",
+              "api/ecosystems/manage-members"
+            ]
+          },
+          {
+            "group": "OID4VC APIs",
+            "pages": [
+              "api/oid4vc/create-issuer",
+              "api/oid4vc/credential-templates",
+              "api/oid4vc/credential-offers",
+              "api/oid4vc/verification-templates"
+            ]
+          },
+          {
+            "group": "User & Auth APIs",
+            "pages": [
+              "api/users/signup",
+              "api/users/signin",
+              "api/users/profile",
+              "api/users/password-reset"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "SDKs & Tools",
+        "groups": [
+          {
+            "group": "SDKs",
+            "pages": [
+              "sdks/overview",
+              "sdks/javascript",
+              "sdks/python"
+            ]
+          },
+          {
+            "group": "CLI Tools",
+            "pages": [
+              "tools/cli-overview"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Multi-protocol credential issuance (Indy, W3C, OID4VC, SD-JWT, mDOC)",
+    "Enterprise-grade multi-tenancy with dedicated or shared agents",
+    "Bulk credential issuance with CSV import and template management",
+    "Complete verification workflows with proof requests and presentation exchange",
+    "Ecosystem management for multi-organization networks with auto-endorsement",
+    "DIDComm-based connections with out-of-band invitations",
+    "Multiple DID methods (did:indy, did:key, did:web, did:polygon)",
+    "Webhook integration for real-time event notifications",
+    "Role-based access control with organization and ecosystem roles",
+    "Cloud wallet service for holder credential management",
+    "X.509 certificate integration for credential signing",
+    "Microservices architecture with NATS message broker"
+  ],
+  "publicApiSurface": [
+    "POST /orgs - Create organization",
+    "POST /orgs/:orgId/credentials/offer - Issue credential",
+    "POST /orgs/:orgId/credentials/oob/offer - Out-of-band credential offer",
+    "POST /orgs/:orgId/bulk/upload - Upload CSV for bulk issuance",
+    "POST /orgs/:orgId/proofs - Send proof request",
+    "POST /orgs/:orgId/proofs/:proofId/verify - Verify presentation",
+    "POST /orgs/:orgId/connections - Create connection invitation",
+    "POST /orgs/:orgId/schemas - Create schema",
+    "POST /orgs/:orgId/credential-definitions - Create credential definition",
+    "POST /agent/wallet/provision - Provision new agent",
+    "POST /agent/wallet/did/create - Create DID",
+    "POST /ecosystem - Create ecosystem",
+    "POST /ecosystem/invitation - Invite member to ecosystem",
+    "POST /orgs/:orgId/oid4vc/issuers - Create OID4VC issuer",
+    "POST /orgs/:orgId/oid4vc/credentials/offers - Create credential offer",
+    "POST /orgs/:orgId/oid4vp/verifiers - Create OID4VP verifier",
+    "POST /auth/signup - User registration",
+    "POST /auth/signin - User login",
+    "GET /orgs/:orgId/credentials - Get credentials",
+    "GET /orgs/:orgId/proofs - Get proof requests",
+    "GET /orgs/:orgId/connections - Get connections"
+  ]
+}
